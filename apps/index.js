@@ -87,12 +87,12 @@ $('.fn_1').click(() => {
   setTimeout(() => {
     $('.moveCont').html('页面渲染中...');
     shell.openExternal('http://localhost:3006/nccloud/resources/workbench/public/common/main/index.html#/');
-  }, 15000)
+  }, 20000)
  
   setTimeout(() => {
     $('.loadModel').fadeOut();
     ipc.send('small');
-  }, 20000)
+  }, 46000)
 })
 
 //一键关闭

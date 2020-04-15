@@ -13,19 +13,19 @@ function createWindow () {
     }
   });
   
-  // win.setAlwaysOnTop(true)
+  win.setAlwaysOnTop(true)
   Menu.setApplicationMenu(null);
   // win.webContents.openDevTools()
   // 加载index.html文件
   win.loadFile('./apps/index.html');
   ipcMain.on('windowClose', e => win.close());
   ipcMain.on('small', e => {
-    // win.setAlwaysOnTop(false)
+    win.setAlwaysOnTop(false)
     win.minimize()
   });
 }
 
 app.whenReady().then(createWindow)
 app.setLoginItemSettings({
-  openAtLogin: false, // Boolean 在登录时启动应用
+  openAtLogin: true, // Boolean 在登录时启动应用
 })
