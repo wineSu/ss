@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body class="body">
+    <ul class="layui-nav" style="-webkit-app-region: drag">
+        <li class="layui-nav-item">
+          <a href="">控 制 台</a>
+        </li>
+    </ul>
+    <div class="layui-tab layui-tab-brief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">单据界面</li>
+        <li>表格档案</li>
+        <li>树卡档案</li>
+      </ul>
+      <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+          <div class="form-cont">
+            <form class="layui-form layui-form-pane">
+                <div class="layui-form-item" style="padding-left: 15px;">
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 发布地址</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="address" lay-verify="required" value="test/meeting/meetingappl" class="layui-input" placeholder="例：ipmam/meeting/holdermeeting">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <input type="checkbox" lay-filter="selDanju" name="is_ladan" title="拉单">
+                  </div>
+                  <div class="layui-inline hide ladan">
+                    <input type="checkbox" name="is_yewuliu" title="适配业务流">
+                  </div>
+                  <div class="layui-inline">
+                    <input type="checkbox" name="is_version" title="多版本">
+                  </div>
+                </div>
+                <div class="layui-collapse">
+                  <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">公共配置</h2>
+                    <div class="layui-colla-content layui-show">
+                      <div class="layui-form-item">
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 数据主键</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="COM_PRIMARY_KEY" lay-verify="required" class="layui-input" placeholder="例：pk_equity_register">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 单据类型</label>
+                          <div class="layui-input-inline">
+                            <input type="text"  name="COM_BILL_TYPE" lay-verify="required" class="layui-input" placeholder="例：4DCA">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="layui-form-item hide ladan">
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 上游appcode</label>
+                          <div class="layui-input-inline">
+                            <input type="text"  name="COM_TRANSFER_APP_CODE" class="layui-input" placeholder="例：49050101">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 上游单据主键</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="COM_TRANSFER_PRIMARY_KEY" class="layui-input" placeholder="例：pk_plandrawup">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 拉单TITLE</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="COM_TRANSFER_TITLE" class="layui-input" placeholder="例：选择固定资产投资计划">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 拉单查询url</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="COM_TRANSFER_SEARCH_URL" class="layui-input" placeholder="例：/nccloud/ipmip/plandrawup/PlanDrawUpQuery4transfer.do">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 上游单据类型</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="COM_SRC_BILL_TYPE" class="layui-input" placeholder="例：4DC0">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">列表</h2>
+                    <div class="layui-colla-content layui-show">
+                      <div class="layui-form-item">
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 查询区Id</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="LIST_SEARCH_ID" lay-verify="required" class="layui-input" placeholder="例：list_search">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 表格区Id</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="LIST_TABLE_ID" lay-verify="required" class="layui-input" placeholder="例：list_table">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">卡片</h2>
+                    <div class="layui-colla-content layui-show">
+                      <div class="layui-form-item">
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 表头编码</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="CARD_FORM_ID" lay-verify="required" class="layui-input" placeholder="例：card_head">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">* 表体编码</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="CARD_TABLE_ID" lay-verify="required" class="layui-input" placeholder="例：['body_assets', 'body_investor']"   >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btnCont">
+                    <button type="button" lay-submit lay-filter="formDemo" class="btn">立即生成</button>
+                </div>
+            </form>
+        </div>
+        </div>
+        <div class="layui-tab-item">
+          <div class="form-cont">
+            <form class="layui-form layui-form1 layui-form-pane">
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 发布地址</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="address" lay-verify="required" value="test/meeting/meetingappl" class="layui-input" placeholder="例：ipmam/meeting/holdermeeting">
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 表体编码</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="TABLE_ID" lay-verify="required" class="layui-input" placeholder="例：list_table">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 数据主键</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="PRIMARY_KEY" lay-verify="required" class="layui-input" placeholder="例：pk_capitalsource">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 打印名称</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="PRINT_FILE_NAME" lay-verify="required" class="layui-input" placeholder="例：49010103-000000">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 搜索属性</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="FILTER_FIELDS" lay-verify="required" class="layui-input" placeholder="例：[ 'source_code', 'source_name' ]">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 查询接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="QUERY_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/query.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 保存接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="SAVE_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/save.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 删除接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="DELETE_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/delete.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 启用状态</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="UNSEAL_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/enable.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 停用状态</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="SEAL_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/disable.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 打印地址</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="PRINT_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/print.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 过滤空行字段</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="EXCEPT_FIELDS" lay-verify="required" class="layui-input" placeholder="例：[ 'enablestate' ]">
+                    </div>
+                  </div>
+                </div>
+                <div class="btnCont">
+                    <button type="button" lay-submit lay-filter="formTable" class="btn">立即生成</button>
+                </div>
+            </form>
+          </div>
+        </div>
+        <div class="layui-tab-item">
+          <div class="form-cont">
+            <form class="layui-form layui-form1 layui-form-pane">
+                <div class="layui-form-item">
+                  <!-- <div class="layui-form-item-self">
+                    <span class="input input--haruki" style="width: 100%;">
+                      <input class="input__field " type="text" name = "title" id="title">
+                      <label class="input__label input__label--haruki" for="title">
+                        <span class="input__label-content input__label-content--haruki">数据主键</span>
+                      </label>
+                    </span>
+                </div> -->
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 发布地址</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="address" lay-verify="required" value="test/meeting/meetingappl" class="layui-input" placeholder="例：ipmam/meeting/holdermeeting">
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                    <label class="layui-form-label"> 集团节点</label>
+                    <div class="layui-input-inline">
+                      <input type="checkbox" name="IS_ORG" value="0" lay-skin="switch" lay-text="集团|组织">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 业务单元显隐</label>
+                    <div class="layui-input-inline">
+                      <input type="checkbox" name="SHOW_UNIT" lay-skin="switch" lay-text="显示|隐藏" checked>
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 表单编码</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="FORM_ID" lay-verify="required" class="layui-input" placeholder="例：card_head">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 树标题</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="TREE_TITLE" lay-verify="required" class="layui-input" placeholder="例：投资类型">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 查询接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="QUERY_TREE" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/query.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 添加数据接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="ADD_DATA" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/save.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 保存接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="SAVE_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/delete.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 删除接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="DELETE_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/enable.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 启用标记接口</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="EANBLE_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/disable.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 打印地址</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="PRINT_URL" lay-verify="required" class="layui-input" placeholder="例：/ipmbd/capitalsource/print.do">
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label">* 打印标识</label>
+                    <div class="layui-input-inline">
+                      <input type="text"  name="NODE_KEY" lay-verify="required" class="layui-input" placeholder="例：investtypeorg">
+                    </div>
+                  </div>
+                </div>
+                <div class="btnCont">
+                    <button type="button" lay-submit lay-filter="formCard" class="btn">立即生成</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="handle">
+      <button type="button " class="layui-btn layui-btn1 reload">
+        <i class="layui-icon layui-icon-refresh"></i>
+      </button><br>
+      <button type="button " class="layui-btn layui-btn1 clearCache">
+        <i class="layui-icon layui-icon-fonts-clear"></i>
+      </button><br>
+      <a href="./index.html">
+        <button type="button" class="layui-btn layui-btn1">
+          <i class="layui-icon layui-icon-next"></i>
+        </button>
+      </a>
+    </div>
+    <div class="loadModel">
+      <div class="load">
+        <div class="moveCont">正在生成...</div>
+      </div>
+    </div>
+
+</body>
+</html>
+<script src="../layui/layui.all.js"></script>
+<script src="./form.js"></script>

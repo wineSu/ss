@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "tools",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron .",
+    "package": "electron-packager . tzdcm --win --out ../dist --arch=x64 --app-version=1.0.0 --electron-version=8.2.0"
+  },
+  "author": "su",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.0",
+    "electron-packager": "^14.2.1"
+  },
+  "dependencies": {
+    "mkdirp": "^1.0.4"
+  }
+}

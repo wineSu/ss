@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html, body{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    body{
+        background: #00090b;
+        color: #f5f5f5;
+        background-image: radial-gradient(#0c091c, #00090b);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outSystem">
+    <img src="../i/out.png" alt="">
+  </div>
+  <div class="bg">
+    <canvas id="canvasStar" width="1100" height="800"></canvas>
+  </div>
+  <div class="timerontent" style="-webkit-app-region: drag">
+    <canvas id="canvas" width="500" height="500" style="width: 350px;height: 350px;"></canvas>
+  </div>
+  <!-- 选择菜单 -->
+  <div class="nav">
+    <a class="list fn_1 moveUpDownFla1" href="javascript:void(0)">
+      <p>一键启动</p>
+    </a>
+    <a class="list fn_2 moveUpDownFla2" href="javascript:void(0)">
+      <p>一键重启</p>
+    </a>
+    <a class="list fn_3 moveUpDownFla3" href="./form.html">
+      <p>代码系统</p>
+    </a>
+  </div>
+  <div class="loadModel">
+    <div class="load">
+      <div class="moveCont">正在启动...</div>
+    </div>
+  </div>
+  <div class="dragModel">
+    <p style="-webkit-app-region: no-drag" id = 'dragModelCont'>请拖拽项目根目录至此，完成初始化！</p>
+  </div>
+</body>
+
+</html>
+<script src="../layui/layui.all.js"></script>
+<script src="./canvas.js"></script>
+<script>
+  require('./index.js');
+</script>
