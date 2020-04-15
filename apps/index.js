@@ -110,7 +110,7 @@ $('.fn_2').click(() => {
     $('.moveCont').html('已完成...');
     $('.loadModel').fadeOut();
     ipc.send('small');
-  }, 12000)
+  }, 20000)
 })
 
 $('.reload').click(() => {

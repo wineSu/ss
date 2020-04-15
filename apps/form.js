@@ -1,5 +1,6 @@
 const { readFile, writeFile, existFolder, copyFolder } = require("./modules");
 const { TemplateEngine, formatDate } = require("./engine");
+const {ipcRenderer: ipc} = require('electron');
 
 let $ = layui.$,
     layer = layui.layer,
@@ -17,6 +18,9 @@ $(function(){
         setTimeout(() => {
             window.location.href = "./index.html"
         }, 2000)
+    })
+    $('.smallwin').click(() => {
+        ipc.send('small');
     })
 
     $('.input__field').focus(function(){
