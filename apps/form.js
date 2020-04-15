@@ -13,6 +13,10 @@ $(function(){
     });
     $('.clearCache').click(() => {
         localStorage.clear();
+        layer.msg('缓存清除，即将返回初始化！');
+        setTimeout(() => {
+            window.location.href = "./index.html"
+        }, 2000)
     })
 
     $('.input__field').focus(function(){
